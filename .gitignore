@@ -38,3 +38,8 @@ test/.coverage
 test/data/legacy_serialized.pt
 *.DS_Store
 *~
+venv/
+__pycache__
+datasets/
+*.pth
+*.onnx

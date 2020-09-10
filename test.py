@@ -47,7 +47,8 @@ for i, data in enumerate(dataset):
     if opt.export_onnx:
         print ("Exporting to ONNX: ", opt.export_onnx)
         assert opt.export_onnx.endswith("onnx"), "Export model file should end with .onnx"
-        torch.onnx.export(model, [data['label'], data['inst']],
+        tensor_in = torch.Tensor(data['label'])
+        torch.onnx.export(model, tensor_in,
                           opt.export_onnx, verbose=True)
         exit(0)
     minibatch = 1 
