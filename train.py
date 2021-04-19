@@ -129,7 +129,7 @@ for epoch in range(start_epoch, opt.niter + opt.niter_decay + 1):
     if epoch % opt.save_epoch_freq == 0:
         print('saving the model at the end of epoch %d, iters %d' % (epoch, total_steps))        
         model.module.save('latest')
-        model.module.save(epoch)
+        #model.module.save(epoch)
         np.savetxt(iter_path, (epoch+1, 0), delimiter=',', fmt='%d')
 
     ### instead of only training the local enhancer, train the entire network after certain iterations
